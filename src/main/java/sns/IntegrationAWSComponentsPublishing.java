@@ -54,12 +54,12 @@ public class IntegrationAWSComponentsPublishing {
 
         final String subscriptionArn = Topics.subscribeQueue(snsClient, sqsClient, topicArn, queueUrl);
 
-        final SetSubscriptionAttributesRequest setSubscriptionAttributesRequest = new SetSubscriptionAttributesRequest();
+        /*final SetSubscriptionAttributesRequest setSubscriptionAttributesRequest = new SetSubscriptionAttributesRequest();
         setSubscriptionAttributesRequest.setSubscriptionArn(subscriptionArn);
         setSubscriptionAttributesRequest.setAttributeName("sprinbootMessageDelivery");
         setSubscriptionAttributesRequest.setAttributeValue("TRUE");
 
-        snsClient.setSubscriptionAttributes(setSubscriptionAttributesRequest);
+        snsClient.setSubscriptionAttributes(setSubscriptionAttributesRequest);*/
 
         SNSExtendedClientConfiguration snsExtendedClientConfiguration = new SNSExtendedClientConfiguration()
                 .withPayloadSupportEnabled(s3Client, BUCKET_NAME)
